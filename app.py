@@ -9,7 +9,7 @@ init_db()
 st.set_page_config(page_title="AI 교육 앱", layout="wide")
 
 # menu = ["Home", "Login", "SignUp", "설문참여",]
-menu = ["Home", "Login", "SignUp", "설문참여", "pythonid"]
+menu = ["Home", "Login", "SignUp", "설문참여", "pythonid", "블록리게임", "테트리스게임"]
 choice = st.sidebar.selectbox("Menu", menu)
 
 # 세션 상태 초기화 (로그인 관리)
@@ -61,6 +61,28 @@ elif choice == "pythonid":
     # '<iframe style="border:1px #FFFFFF none" src="https://www.online-python.com/" title="iFrame" width="100%" height="100%" scrolling="no" frameborder="no" allow="fullscreen"></iframe>'
       '<iframe style="border:1px #FFFFFF none" src="https://www.online-python.com/" title="iFrame" width="100%" height="1800px" scrolling="yes" frameborder="no" allow="fullscreen"></iframe>', height=820
                    )
+
+elif choice == "블록리게임":
+    st.title("🧩 블록리게임 (Blockly Games)")
+    st.caption("블록 코딩으로 퍼즐·미로·새·거북이 등 단계별 게임을 해결해 보세요.")
+    components.html(
+        '<iframe src="https://blockly.games/?lang=ko" title="Blockly Games" '
+        'width="100%" height="850" style="border:none;" '
+        'allow="fullscreen" allowfullscreen></iframe>',
+        height=870, scrolling=True
+    )
+    st.markdown("[🔗 새 창에서 열기](https://blockly.games/?lang=ko)")
+
+elif choice == "테트리스게임":
+    st.title("🎮 테트리스게임 (Tetris)")
+    st.caption("게임 화면을 한 번 클릭한 뒤 키보드 방향키(←→↓↑)와 스페이스바로 플레이하세요.")
+    components.html(
+        '<iframe src="https://play.tetris.com/" title="Tetris" '
+        'width="100%" height="850" style="border:none;" '
+        'allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>',
+        height=870, scrolling=True
+    )
+    st.markdown("[🔗 새 창에서 열기](https://play.tetris.com/)")
 
 elif choice == "설문참여":
     st.title("📝 AI의 교육적 효과에 대한 인식 설문조사")
